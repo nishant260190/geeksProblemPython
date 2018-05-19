@@ -1,4 +1,4 @@
-noOfTestCases = int(input());
+'''noOfTestCases = int(input());
 chocolateArray = [];
 cltCostArray = [];
 for case in range(noOfTestCases):
@@ -30,3 +30,21 @@ while testCaseIndex < noOfTestCases :
         print(chocBuy);
     print(chocBuy*cltCostArray[testCaseIndex]);
     testCaseIndex +=1;
+'''
+
+testCases = int(input())
+for test in range(testCases):
+    stations = int(input())
+    myList = input().split()
+    price = int(input())
+    buy = int(myList[0])
+    chocolates = 0
+    index = 0
+    while(index < (stations-1)):
+        move = int(myList[index]) - int(myList[index+1])
+        chocolates += move
+        if(chocolates < 0):
+            buy += abs(chocolates)
+            chocolates = 0 
+        index += 1
+    print (buy*price)
